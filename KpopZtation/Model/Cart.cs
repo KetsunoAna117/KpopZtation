@@ -16,7 +16,7 @@ namespace KpopZtation.Model
     {
         public int CustomerID { get; set; }
         public int AlbumID { get; set; }
-        public string Qty { get; set; }
+        public int Qty { get; set; }
     
         public virtual Album Album { get; set; }
         public virtual Customer Customer { get; set; }
