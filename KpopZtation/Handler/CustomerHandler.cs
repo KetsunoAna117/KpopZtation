@@ -19,10 +19,20 @@ namespace KpopZtation.Handler
             return "";
 
         }
-
-        public static void insertToDatabase(string name, string email, String gender, string address, string password)
+        
+        public static String validateLogin(String email, String password)
         {
-            insertToDatabase(name, email, gender, address, password);
+            Customer customer = CustomerRepository.getCustomer(email, password);
+            if(customer == null)
+            {
+                return "Email or Password Invalid";
+            }
+            return "";
+        }
+
+        public static void insertToDatabase(string name, string email, string gender, string address, string password, string role)
+        {
+            CustomerRepository.insertCustomer(name, email, password, gender, address, role);
         }
     }
 }

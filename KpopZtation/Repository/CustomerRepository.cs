@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using KpopZtation.Model;
 using KpopZtation.Factory;
+using System.Data.Entity.Validation;
 
 namespace KpopZtation.Repository
 {
@@ -11,7 +12,7 @@ namespace KpopZtation.Repository
     {
         private static Database1Entities2 db = Singleton.getDb();
 
-        public static void insertCustomer(String name, String email, String password, String gender, String address, String role)
+        public static void insertCustomer(string name, string email, string password, string gender, string address, string role)
         {
             db.Customers.Add(CustomerFactory.createCustomer(name, email, password, gender, address, role));
             db.SaveChanges();
@@ -34,6 +35,7 @@ namespace KpopZtation.Repository
         {
             Customer selectedCustomer = db.Customers.Find(id);
             db.Customers.Remove(selectedCustomer);
+            db.SaveChanges();
         }
 
         public static Customer findCustomerByEmail(String email)

@@ -12,7 +12,10 @@ namespace KpopZtation.Views.SignIn
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["User"] != null || Request.Cookies["User_Cookie"] != null)
+            {
+                Response.Redirect("~/Views/Home.aspx");
+            }
         }
 
         protected void RegisterBtn_Click(object sender, EventArgs e)
@@ -32,6 +35,8 @@ namespace KpopZtation.Views.SignIn
 
             if(NameError.Text == "" && EmailError.Text == "" && GenderError.Text == "" && AddressError.Text == "" && PasswordError.Text == "")
             {
+                Response.Redirect("~/Views/SignIn/Login.aspx");
+                RegisterController.InsertToDatabase(name, email, male, female, address, password);
                 SuccessLbl.Text = "Success!";
             }
             else

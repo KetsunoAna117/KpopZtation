@@ -22,9 +22,8 @@ namespace KpopZtation.Controller
                 gender = "Female";
             }
 
-            CustomerHandler.insertToDatabase(name, email, gender, address, password);
-
-
+            String role = "CST";
+            CustomerHandler.insertToDatabase(name, email, gender, address, password, role);
         }
 
         public static string checkName(String name)
