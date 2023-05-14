@@ -47,50 +47,10 @@
                 <h1>KpopZtation</h1>
                 <div class="nav_navigator_container">
                     <div class="nav_navigator">
-                        <asp:Button CssClass="btn btn-primary" ID="HomeBtn" runat="server" Text="Home" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-primary" ID="ToHomeBtn" runat="server" Text="Home" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-primary" ID="ToCartBtn" runat="server" Text="Cart" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-primary" ID="ToTransactionBtn" runat="server" Text="Transaction" CausesValidation="false"/>
 
-                        <asp:Panel ID="ArtistBtn" runat="server" CssClass="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Artist
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton8" runat="server">View Artist</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton9" runat="server">Add Artist</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton10" runat="server">Update Artist</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton7" runat="server">Delete Artist</asp:LinkButton>
-                                </li>
-                            </ul>
-                        </asp:Panel>
-
-                        <asp:Panel ID="AlbumBtn" runat="server" CssClass="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Albums
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton1" runat="server">View Albums</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton2" runat="server">Add Albums</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton3" runat="server">Update Albums</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton4" runat="server">Delete Albums</asp:LinkButton>
-                                </li>
-                            </ul>
-                        </asp:Panel>
-
-                        <asp:Button CssClass="btn btn-primary" ID="CartBtn" runat="server" Text="Cart" CausesValidation="false"/>
-
-                        <asp:Panel ID="TransactionBtn" runat="server" CssClass="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Transaction
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton5" runat="server">Transaction Report</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton6" runat="server">Transaction History</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton11" runat="server">Transaction Detail</asp:LinkButton>
-                                </li>
-                            </ul>
-                        </asp:Panel>
                     </div>
 
                     <div class="nav_account">

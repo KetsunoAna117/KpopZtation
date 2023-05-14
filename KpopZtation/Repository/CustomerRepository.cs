@@ -36,6 +36,11 @@ namespace KpopZtation.Repository
             db.Customers.Remove(selectedCustomer);
         }
 
+        public static Customer findCustomerByEmail(String email)
+        {
+            return (from customer in db.Customers where customer.CustomerEmail == email select customer).FirstOrDefault();
+        }
+
         public static Customer getCustomer(String email, String password)
         {
             return (from customer in db.Customers where customer.CustomerEmail == email && customer.CustomerPassword == password select customer).FirstOrDefault();
