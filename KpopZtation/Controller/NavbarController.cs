@@ -15,7 +15,7 @@ namespace KpopZtation.Controller
         {
             CustomerHandler.loadCookie();
 
-            if (IsUserLoggedIn())
+            if (CustomerHandler.IsUserLoggedIn())
             {
                 // User is logged in
                 HttpContext.Current.Session["IsUserLoggedIn"] = true;
@@ -27,15 +27,6 @@ namespace KpopZtation.Controller
             }
         }
 
-        public static bool IsUserLoggedIn()
-        {
-            return HttpContext.Current.Session["User"] != null;
-        }
-
-        public static Customer GetLoggedInUser()
-        {
-            return (Customer)HttpContext.Current.Session["User"];
-        }
 
         public static void doSignOut()
         {

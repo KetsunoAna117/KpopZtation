@@ -117,9 +117,9 @@
     <Content Include="Views\Album\AlbumDetail.aspx" />
     <Content Include="Views\Album\InsertAlbum.aspx" />
     <Content Include="Views\Album\UpdateAlbum.aspx" />
-    <Content Include="Views\Artist\ArtistDetail.aspx" />
-    <Content Include="Views\Artist\InsertArtist.aspx" />
-    <Content Include="Views\Artist\UpdateArtist.aspx" />
+    <Content Include="Views\ArtistPage\ArtistDetail.aspx" />
+    <Content Include="Views\ArtistPage\InsertArtist.aspx" />
+    <Content Include="Views\ArtistPage\UpdateArtist.aspx" />
     <Content Include="Views\Cart.aspx" />
     <Content Include="Views\Home.aspx" />
     <Content Include="Views\SignIn\Login.aspx" />
@@ -204,25 +204,25 @@
     <Compile Include="Views\Album\UpdateAlbum.aspx.designer.cs">
       <DependentUpon>UpdateAlbum.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Artist\ArtistDetail.aspx.cs">
+    <Compile Include="Views\ArtistPage\ArtistDetail.aspx.cs">
       <DependentUpon>ArtistDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Artist\ArtistDetail.aspx.designer.cs">
+    <Compile Include="Views\ArtistPage\ArtistDetail.aspx.designer.cs">
       <DependentUpon>ArtistDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Artist\InsertArtist.aspx.cs">
+    <Compile Include="Views\ArtistPage\InsertArtist.aspx.cs">
       <DependentUpon>InsertArtist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Artist\InsertArtist.aspx.designer.cs">
+    <Compile Include="Views\ArtistPage\InsertArtist.aspx.designer.cs">
       <DependentUpon>InsertArtist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Artist\UpdateArtist.aspx.cs">
+    <Compile Include="Views\ArtistPage\UpdateArtist.aspx.cs">
       <DependentUpon>UpdateArtist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Artist\UpdateArtist.aspx.designer.cs">
+    <Compile Include="Views\ArtistPage\UpdateArtist.aspx.designer.cs">
       <DependentUpon>UpdateArtist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Cart.aspx.cs">

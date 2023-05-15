@@ -40,6 +40,11 @@ namespace KpopZtation.Repository
             return db.Artists.Find(id);
         }
 
+        public static Artist GetArtistByName(String name)
+        {
+            return (from artist in db.Artists where (artist.ArtistName) == name select artist).FirstOrDefault();
+        }
+
         public static List<Artist> getAllArtist()
         {
             return db.Artists.ToList();

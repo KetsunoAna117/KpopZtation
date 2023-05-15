@@ -89,6 +89,34 @@ namespace KpopZtation.Handler
             }
         }
 
-        
+        public static bool IsUserLoggedIn()
+        {
+            return HttpContext.Current.Session["User"] != null;
+        }
+
+
+        public static Customer GetLoggedInUser()
+        {
+            return (Customer)HttpContext.Current.Session["User"];
+        }
+
+        //public static bool isAdmin()
+        //{
+        //    Customer loggedInUser = GetLoggedInUser();
+        //    return loggedInUser != null && loggedInUser.CustomerRole.ToString() == "ADMIN";
+        //}
+
+        public static bool isAdmin()
+        {
+            if (HttpContext.Current.Request.Cookies["User_Cookie"] != null)
+            {
+                Customer userData = CustomerRepository.getCustomerByID(Convert.ToInt32(HttpContext.Current.Request.Cookies["User_Cookie"].Value));
+                return userData != null && userData.CustomerRole.ToString() == "ADMIN";
+            }
+
+            return false;
+        }
+
+
     }
 }

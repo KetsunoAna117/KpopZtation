@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using KpopZtation.Controller;
+using KpopZtation.Handler;
 
 
 namespace KpopZtation.Views
@@ -18,7 +19,7 @@ namespace KpopZtation.Views
 
             if ((Boolean)Session["IsUserLoggedIn"])
             {
-                if(NavbarController.GetLoggedInUser().CustomerRole.ToString() == "ADMIN")
+                if(CustomerHandler.isAdmin())
                 {
                     ToCartBtn.Visible = false;
 
