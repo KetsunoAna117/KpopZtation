@@ -15,8 +15,8 @@ namespace KpopZtation.Views
         private void updateView()
         {
             List<Model.Artist> artists = ArtistHandler.getAllArtist();
-            GridView1.DataSource = artists;
-            GridView1.DataBind();
+            CardRepeater.DataSource = artists;
+            CardRepeater.DataBind();
         }
 
         protected void Page_Load(object sender, EventArgs e)
