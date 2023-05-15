@@ -47,14 +47,14 @@
                 <h1>KpopZtation</h1>
                 <div class="nav_navigator_container">
                     <div class="nav_navigator">
-                        <asp:Button CssClass="btn btn-primary" ID="ToHomeBtn" runat="server" Text="Home" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-primary" ID="ToHomeBtn" runat="server" Text="Home" CausesValidation="false" OnClick="ToHomeBtn_Click"/>
                         <asp:Button CssClass="btn btn-primary" ID="ToCartBtn" runat="server" Text="Cart" CausesValidation="false"/>
                         <asp:Button CssClass="btn btn-primary" ID="ToTransactionBtn" runat="server" Text="Transaction" CausesValidation="false"/>
 
                     </div>
 
                     <div class="nav_account">
-                        <asp:Button CssClass="btn btn-secondary" ID="Button1" runat="server" Text="Profile" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-secondary" ID="ToProfileBtn" runat="server" Text="Profile" CausesValidation="false"/>
                         
                         <asp:Panel ID="sign_in_div" runat="server" class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,13 +62,13 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton12" runat="server">Log in</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton13" runat="server">Register</asp:LinkButton>
+                                    <asp:LinkButton class="dropdown-item" ID="ToLogin" runat="server" OnClick="ToLogin_Click">Log in</asp:LinkButton>
+                                    <asp:LinkButton class="dropdown-item" ID="ToRegister" runat="server" OnClick="ToRegister_Click">Register</asp:LinkButton>
                                 </li>
                             </ul>
                         </asp:Panel>
 
-                        <asp:Button CssClass="btn btn-danger" ID="Button2" runat="server" Text="Sign out" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-danger" ID="ToSignOutBtn" runat="server" Text="Sign out" CausesValidation="false" OnClick="ToSignOutBtn_Click"/>
 
                     </div>
 

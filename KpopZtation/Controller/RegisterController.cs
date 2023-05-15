@@ -23,7 +23,7 @@ namespace KpopZtation.Controller
             }
 
             String role = "CST";
-            CustomerHandler.insertToDatabase(name, email, gender, address, password, role);
+            CustomerRepository.insertCustomer(name, email, password, gender, address, role);
         }
 
         public static string checkName(String name)

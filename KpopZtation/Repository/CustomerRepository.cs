@@ -43,6 +43,11 @@ namespace KpopZtation.Repository
             return (from customer in db.Customers where customer.CustomerEmail == email select customer).FirstOrDefault();
         }
 
+        public static Customer getCustomerByID(int id)
+        {
+            return db.Customers.Find(id);
+        }
+
         public static Customer getCustomer(String email, String password)
         {
             return (from customer in db.Customers where customer.CustomerEmail == email && customer.CustomerPassword == password select customer).FirstOrDefault();

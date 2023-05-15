@@ -5,18 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace KpopZtation.Views
+namespace KpopZtation.Views.Artist
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class UpdateArtist : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void InsertArtistBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Views/Artist/InsertArtist.aspx");
         }
     }
 }
