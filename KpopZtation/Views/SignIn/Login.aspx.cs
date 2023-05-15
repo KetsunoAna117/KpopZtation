@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using KpopZtation.Controller;
+using KpopZtation.Handler;
 
 namespace KpopZtation.Views.SignIn
 {
@@ -25,11 +26,11 @@ namespace KpopZtation.Views.SignIn
 
             EmailError.Text = LoginController.CheckEmail(email);
             PasswordTxt.Text = LoginController.CheckPassword(password);
-            ErrorLogin.Text = LoginController.DoLogin(email, password);
+            ErrorLogin.Text = LoginController.CheckLogin(email, password);
 
             if (EmailError.Text == "" && PasswordTxt.Text == "" && ErrorLogin.Text == "")
             {
-                Response.Redirect("~/Views/Home.aspx");
+                LoginController.doLogin(email, password, CheckBoxRememberMe.Checked);
             }
         }
     }

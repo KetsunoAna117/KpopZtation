@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using KpopZtation.Repository;
 using KpopZtation.Handler;
+using KpopZtation.Model;
 
 namespace KpopZtation.Controller
 {
@@ -24,11 +26,24 @@ namespace KpopZtation.Controller
             return response;
         }
 
-        public static String DoLogin(String email, String password)
+        public static String CheckLogin(String email, String password)
         {
             String response = CustomerHandler.validateLogin(email, password);
             return response;
             
         }
+
+        public static void doLogin(string email, string password, bool rememberMe)
+        {
+            if(CustomerHandler.AuthenticateUser(email, password))
+            {
+                CustomerHandler.ProcessLoginSuccess(email, password, rememberMe);
+            }
+            else
+            {
+                CustomerHandler.ProcessLoginFailed();
+            }
+        }
+
     }
 }

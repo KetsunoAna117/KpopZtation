@@ -60,13 +60,13 @@ namespace KpopZtation.Views
         protected global::System.Web.UI.WebControls.Button ToTransactionBtn;
 
         /// <summary>
-        /// Button1 control.
+        /// ToProfileBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button ToProfileBtn;
 
         /// <summary>
         /// sign_in_div control.
@@ -78,31 +78,31 @@ namespace KpopZtation.Views
         protected global::System.Web.UI.WebControls.Panel sign_in_div;
 
         /// <summary>
-        /// LinkButton12 control.
+        /// ToLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton12;
+        protected global::System.Web.UI.WebControls.LinkButton ToLogin;
 
         /// <summary>
-        /// LinkButton13 control.
+        /// ToRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton13;
+        protected global::System.Web.UI.WebControls.LinkButton ToRegister;
 
         /// <summary>
-        /// Button2 control.
+        /// ToSignOutBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button ToSignOutBtn;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

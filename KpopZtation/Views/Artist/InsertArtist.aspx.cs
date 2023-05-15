@@ -13,5 +13,11 @@ namespace KpopZtation.Views.Artist
         {
 
         }
+
+        protected void SubmitBtn_Click(object sender, EventArgs e)
+        {
+            String name = ArtistNameTxt.Text.ToString();
+            
+        }
     }
 }
