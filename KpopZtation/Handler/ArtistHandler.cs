@@ -12,7 +12,7 @@ namespace KpopZtation.Handler
         public static String checkUniqueArtistName(String name)
         {
             String response = "";
-            if (ArtistRepository.GetArtistByName(name) != null) response = "Artist name has been inserted (must unique)";
+            if (getArtistByName(name) != null) response = "Artist name has been inserted (must unique)";
 
             return response;
         }
@@ -20,6 +20,28 @@ namespace KpopZtation.Handler
         public static void insertArtist(String name, String imageName)
         {
             ArtistRepository.addArtist(name, imageName);
+        }
+
+        public static void updateArtist(int id, string name, string imageName)
+        {
+            ArtistRepository.updateArtist(id, name, imageName);
+        }
+
+        public static void deleteArtist(int id)
+        {
+            ArtistRepository.deleteArtist(id);
+        }
+
+        public static Artist getArtistByName(string name)
+        {
+            List<Artist> artists = getAllArtist();
+            return artists.Where(artist => artist.ArtistName == name).FirstOrDefault();
+        }
+
+        public static Artist GetArtist(int id)
+        {
+            List<Artist> artists = getAllArtist();
+            return artists.Where(artist => artist.ArtistID == id).FirstOrDefault();
         }
 
         public static List<Artist> getAllArtist()

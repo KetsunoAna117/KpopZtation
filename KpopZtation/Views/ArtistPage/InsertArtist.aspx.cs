@@ -14,31 +14,42 @@ namespace KpopZtation.Views.Artist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (CustomerHandler.isAdmin() == false)
+
+            if (Request.Cookies["User_Cookie"] == null && Session["User"] == null)
             {
                 Response.Redirect("~/Views/Home.aspx");
             }
+            
+            if (CustomerController.isAdmin() == false)
+            {
+                Response.Redirect("~/Views/Home.aspx");
+            }
+
         }
 
         protected void SubmitBtn_Click(object sender, EventArgs e)
         {
             String name = ArtistNameTxt.Text.ToString();
-            ArtistNameError.Text = InsertArtistController.checkArtistName(name);
+            ArtistNameError.Text = ArtistController.checkArtistName(name);
 
 
             if (ArtistImageUpload.HasFile)
             {
-                ArtistImageError.Text = InsertArtistController.checkFile(Path.GetExtension(ArtistImageUpload.FileName).ToLower(), ArtistImageUpload.FileBytes.Length);
+                ArtistImageError.Text = ArtistController.checkFile(Path.GetExtension(ArtistImageUpload.FileName).ToLower(), ArtistImageUpload.FileBytes.Length);
 
-                if(ArtistImageError.Text == "")
+                if(ArtistImageError.Text == "" && ArtistNameError.Text == "")
                 {
                     string fileName = ArtistImageUpload.FileName;
-                    string filePath = Server.MapPath("~/Assets/") + fileName;
+                    string filePath = Server.MapPath("~/Assets/ArtistImage/") + fileName;
 
                     ArtistImageUpload.SaveAs(filePath);
 
                     ArtistHandler.insertArtist(name, fileName);
                     Response.Redirect("~/Views/Home.aspx");
+                }
+                else
+                {
+                    return;
                 }
             }
             else

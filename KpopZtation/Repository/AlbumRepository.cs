@@ -11,9 +11,9 @@ namespace KpopZtation.Repository
     {
         private static Database1Entities2 db = Singleton.getDb();
 
-        public static void addAlbum(int artistId, String albumName, String albumImage, int albumPrice, int albumStock, String albumDescription)
+        public static void addAlbum(String albumName, int ArtistID, String albumImage, int albumPrice, int albumStock, String albumDescription)
         {
-            db.Albums.Add(AlbumFactory.createAlbum(artistId, albumName, albumImage, albumPrice, albumStock, albumDescription));
+            db.Albums.Add(AlbumFactory.createAlbum(albumName, ArtistID, albumImage, albumPrice, albumStock, albumDescription));
             db.SaveChanges();
         }
 
@@ -31,20 +31,25 @@ namespace KpopZtation.Repository
             selectedAlbum.AlbumName = albumName;
             selectedAlbum.AlbumImage = albumImage;
             selectedAlbum.AlbumPrice = albumPrice;
-            selectedAlbum.AlbumPrice = albumStock;
+            selectedAlbum.AlbumStock = albumStock;
             selectedAlbum.AlbumDescription = albumDescription;
 
             db.SaveChanges();
         }
 
-        public static Album getAlbum(int albumID)
-        {
-            return db.Albums.Find(albumID);
-        }
+        //public static Album getAlbum(int albumID)
+        //{
+        //    return db.Albums.Find(albumID);
+        //}
 
         public static List<Album> getAllAlbum()
         {
             return db.Albums.ToList();
         }
+
+        //public static List<Album> getAlbumByArtist(int ArtistID)
+        //{
+        //    return (from albums in db.Albums where (albums.ArtistID == ArtistID) select albums).ToList();
+        //}
     }
 }

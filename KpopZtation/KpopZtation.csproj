@@ -114,9 +114,9 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Views\Album\AlbumDetail.aspx" />
-    <Content Include="Views\Album\InsertAlbum.aspx" />
-    <Content Include="Views\Album\UpdateAlbum.aspx" />
+    <Content Include="Views\AlbumPage\AlbumDetail.aspx" />
+    <Content Include="Views\AlbumPage\InsertAlbum.aspx" />
+    <Content Include="Views\AlbumPage\UpdateAlbum.aspx" />
     <Content Include="Views\ArtistPage\ArtistDetail.aspx" />
     <Content Include="Views\ArtistPage\InsertArtist.aspx" />
     <Content Include="Views\ArtistPage\UpdateArtist.aspx" />
@@ -130,16 +130,22 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\InsertArtistController.cs" />
+    <Compile Include="Controller\AlbumDetailController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Controller\AlbumController.cs" />
+    <Compile Include="Controller\ArtistController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\NavbarController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
+    <Compile Include="Controller\ArtistDetailController.cs" />
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />
     <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
     <Compile Include="Factory\TransactionDetailFactory.cs" />
     <Compile Include="Factory\TransactionHeaderFactory.cs" />
+    <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\ArtistHandler.cs" />
     <Compile Include="Handler\CustomerHandler.cs" />
     <Compile Include="Model\Album.cs">
@@ -183,25 +189,25 @@
     <Compile Include="Repository\Singleton.cs" />
     <Compile Include="Repository\TransactionDetailRepository.cs" />
     <Compile Include="Repository\TransactionHeaderRepository.cs" />
-    <Compile Include="Views\Album\AlbumDetail.aspx.cs">
+    <Compile Include="Views\AlbumPage\AlbumDetail.aspx.cs">
       <DependentUpon>AlbumDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Album\AlbumDetail.aspx.designer.cs">
+    <Compile Include="Views\AlbumPage\AlbumDetail.aspx.designer.cs">
       <DependentUpon>AlbumDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Album\InsertAlbum.aspx.cs">
+    <Compile Include="Views\AlbumPage\InsertAlbum.aspx.cs">
       <DependentUpon>InsertAlbum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Album\InsertAlbum.aspx.designer.cs">
+    <Compile Include="Views\AlbumPage\InsertAlbum.aspx.designer.cs">
       <DependentUpon>InsertAlbum.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Album\UpdateAlbum.aspx.cs">
+    <Compile Include="Views\AlbumPage\UpdateAlbum.aspx.cs">
       <DependentUpon>UpdateAlbum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Album\UpdateAlbum.aspx.designer.cs">
+    <Compile Include="Views\AlbumPage\UpdateAlbum.aspx.designer.cs">
       <DependentUpon>UpdateAlbum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\ArtistPage\ArtistDetail.aspx.cs">
@@ -325,7 +331,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <Folder Include="Assets\AlbumImage\" />
+    <Folder Include="Assets\ArtistImage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

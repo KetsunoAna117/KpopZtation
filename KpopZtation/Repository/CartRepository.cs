@@ -24,9 +24,9 @@ namespace KpopZtation.Repository
             db.SaveChanges();
         }
 
-        public static List<Cart> getCartData(int customerID)
+        public static List<Cart> getAllCartData()
         {
-            return (from Cart in db.Carts where(Cart.CustomerID == customerID) select Cart).ToList();
+            return db.Carts.ToList();
         }
     }
 }

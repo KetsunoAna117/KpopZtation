@@ -39,7 +39,7 @@ namespace KpopZtation.Controller
         {
             String response = "";
             if (email.Equals("")) response = "Email cannot be empty";
-            else response = CustomerHandler.checkUniqueEmail(email);
+            else response = CustomerController.checkUniqueEmail(email);
 
             return response;
         }

@@ -19,7 +19,7 @@ namespace KpopZtation.Views
 
             if ((Boolean)Session["IsUserLoggedIn"])
             {
-                if(CustomerHandler.isAdmin())
+                if(CustomerController.isAdmin())
                 {
                     ToCartBtn.Visible = false;
 

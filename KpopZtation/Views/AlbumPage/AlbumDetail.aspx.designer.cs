@@ -7,48 +7,84 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KpopZtation.Views.Artist
+namespace KpopZtation.Views.Album
 {
 
 
-    public partial class UpdateArtist
+    public partial class AlbumDetail
     {
 
         /// <summary>
-        /// ArtistImage control.
+        /// AlbumImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ArtistImage;
+        protected global::System.Web.UI.WebControls.Image AlbumImage;
 
         /// <summary>
-        /// ArtistName control.
+        /// AlbumName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ArtistName;
+        protected global::System.Web.UI.WebControls.Label AlbumName;
 
         /// <summary>
-        /// InsertArtist_InputField control.
+        /// AlbumDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel InsertArtist_InputField;
+        protected global::System.Web.UI.WebControls.Label AlbumDescription;
 
         /// <summary>
-        /// InsertArtist_NameInput control.
+        /// AlbumPriceLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel InsertArtist_NameInput;
+        protected global::System.Web.UI.WebControls.Label AlbumPriceLbl;
+
+        /// <summary>
+        /// AlbumPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AlbumPrice;
+
+        /// <summary>
+        /// AlbumStockLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AlbumStockLbl;
+
+        /// <summary>
+        /// AlbumStock control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AlbumStock;
+
+        /// <summary>
+        /// AddToCart_div control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel AddToCart_div;
 
         /// <summary>
         /// Label1 control.
@@ -60,66 +96,30 @@ namespace KpopZtation.Views.Artist
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// ArtistNameTxt control.
+        /// AddToCartTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ArtistNameTxt;
+        protected global::System.Web.UI.WebControls.TextBox AddToCartTxt;
 
         /// <summary>
-        /// ArtistNameError control.
+        /// AddToCartBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ArtistNameError;
+        protected global::System.Web.UI.WebControls.Button AddToCartBtn;
 
         /// <summary>
-        /// InsertArtist_ImageInput control.
+        /// BuyQuantityError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel InsertArtist_ImageInput;
-
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
-        /// <summary>
-        /// ArtistImageUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload ArtistImageUpload;
-
-        /// <summary>
-        /// ArtistImageError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ArtistImageError;
-
-        /// <summary>
-        /// SubmitBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitBtn;
+        protected global::System.Web.UI.WebControls.Label BuyQuantityError;
     }
 }

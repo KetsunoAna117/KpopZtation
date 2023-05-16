@@ -13,9 +13,9 @@ namespace KpopZtation.Controller
 
         public static void HandleUserState()
         {
-            CustomerHandler.loadCookie();
+            CustomerController.loadCookie();
 
-            if (CustomerHandler.IsUserLoggedIn())
+            if (CustomerController.IsUserLoggedIn())
             {
                 // User is logged in
                 HttpContext.Current.Session["IsUserLoggedIn"] = true;
@@ -30,7 +30,7 @@ namespace KpopZtation.Controller
 
         public static void doSignOut()
         {
-            CustomerHandler.ProcessLogOut();
+            CustomerController.ProcessLogOut();
 
             // Redirect to the login page
             HttpContext.Current.Response.Redirect("~/Views/SignIn/Login.aspx");

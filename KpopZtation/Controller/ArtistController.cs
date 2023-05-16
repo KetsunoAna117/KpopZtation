@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using KpopZtation.Model;
 using KpopZtation.Handler;
 
 namespace KpopZtation.Controller
 {
-    public class InsertArtistController
+    public class ArtistController
     {
         public static String checkArtistName(String name)
         {
@@ -36,8 +37,22 @@ namespace KpopZtation.Controller
 
 
         }
+        public static Artist GetArtist(int id)
+        {
+            return ArtistHandler.GetArtist(id);
+        }
 
-        
-        
+        public static List<Artist> getAllArtist()
+        {
+            return ArtistHandler.getAllArtist();
+        }
+
+        public static void updateArtist(int id, String name, String fileName)
+        {
+            ArtistHandler.updateArtist(id, name, fileName);
+        }
+
+
+
     }
 }

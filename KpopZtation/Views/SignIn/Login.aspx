@@ -34,7 +34,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <asp:Panel ID="login_page" runat="server" CssClass="login_page">
-        <asp:Panel ID="login_container" runat="server" CssClass="login_inputField_container">
+        <asp:Panel ID="login_container" runat="server" CssClass="login_inputField_container ">
             <h2>Login</h2>
 
             <asp:Panel ID="login_inputField_container" runat="server" CssClass="login_inputField_container">

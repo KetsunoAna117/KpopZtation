@@ -25,9 +25,9 @@ namespace KpopZtation.Repository
 
         }
 
-        public static TransactionDetail getTransactionDetail(int transactionID)
+        public static List<TransactionDetail> getAllTransactionDetail()
         {
-            return db.TransactionDetails.Find(transactionID);
+            return db.TransactionDetails.ToList();
         }
 
     }
