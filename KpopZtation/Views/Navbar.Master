@@ -4,12 +4,13 @@
 
 <html>
 <head runat="server">
-    <title>Home</title>
+    <title>KpopZStation</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
      <style type="text/css">
         .nav_navigator{
             display:flex;
+            margin-top:0.5rem;
         }
 
         .nav_navigator > *:not(:last-child){
@@ -19,13 +20,21 @@
         .nav_navigator_container{
             display:flex;
             justify-content:space-between;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
+           
         }
 
         .body{
-            margin-left: 1vw;
-            margin-right: 1vw;
+            margin-left: 3vw;
+            margin-right: 3vw;
             margin-top: 1rem;
+            margin-bottom: 2rem;
+            
+        }
+
+        .body__content{
+            margin-top: 1rem;
+
         }
 
         .nav_account{
@@ -35,6 +44,11 @@
         .nav_account > *:not(:last-child){
             margin-right: 0.5rem;
         }
+
+        .brand_name{
+            font-weight: 700;
+            /*padding-bottom: 1rem;*/
+        }
      </style>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -42,19 +56,19 @@
 
 <body>
     <form id="form1" runat="server" class="body">
-        <div class="nav-container">
+        <div class="nav-container border-bottom border-primary">
             <div class="nav-left">
-                <h1>KpopZtation</h1>
-                <div class="nav_navigator_container">
+                <h1 class="brand_name">🎵 KpopZtation</h1>
+                <div class="nav_navigator_container ">
                     <div class="nav_navigator">
-                        <asp:Button CssClass="btn btn-primary" ID="ToHomeBtn" runat="server" Text="Home" CausesValidation="false"/>
-                        <asp:Button CssClass="btn btn-primary" ID="ToCartBtn" runat="server" Text="Cart" CausesValidation="false"/>
-                        <asp:Button CssClass="btn btn-primary" ID="ToTransactionBtn" runat="server" Text="Transaction" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-outline-primary" ID="ToHomeBtn" runat="server" Text="Home" CausesValidation="false" OnClick="ToHomeBtn_Click"/>                      
+                        <asp:Button CssClass="btn btn-outline-primary" ID="ToCartBtn" runat="server" Text="Cart" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-outline-primary" ID="ToTransactionBtn" runat="server" Text="Transaction" CausesValidation="false"/>
 
                     </div>
 
                     <div class="nav_account">
-                        <asp:Button CssClass="btn btn-secondary" ID="Button1" runat="server" Text="Profile" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-secondary" ID="ToProfileBtn" runat="server" Text="Profile" CausesValidation="false"/>
                         
                         <asp:Panel ID="sign_in_div" runat="server" class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,20 +76,20 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton12" runat="server">Log in</asp:LinkButton>
-                                    <asp:LinkButton class="dropdown-item" ID="LinkButton13" runat="server">Register</asp:LinkButton>
+                                    <asp:LinkButton class="dropdown-item" ID="ToLogin" runat="server" OnClick="ToLogin_Click">Log in</asp:LinkButton>
+                                    <asp:LinkButton class="dropdown-item" ID="ToRegister" runat="server" OnClick="ToRegister_Click">Register</asp:LinkButton>
                                 </li>
                             </ul>
                         </asp:Panel>
 
-                        <asp:Button CssClass="btn btn-danger" ID="Button2" runat="server" Text="Sign out" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-danger" ID="ToSignOutBtn" runat="server" Text="Sign out" CausesValidation="false" OnClick="ToSignOutBtn_Click"/>
 
                     </div>
 
                 </div>
             </div>
         </div>
-        <div>
+        <div class="body__content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

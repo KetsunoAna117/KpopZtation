@@ -7,110 +7,119 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KpopZtation.Views
+namespace KpopZtation.Views.Album
 {
 
 
-    public partial class Navbar
+    public partial class AlbumDetail
     {
 
         /// <summary>
-        /// head control.
+        /// AlbumImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Image AlbumImage;
 
         /// <summary>
-        /// form1 control.
+        /// AlbumName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label AlbumName;
 
         /// <summary>
-        /// ToHomeBtn control.
+        /// AlbumDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToHomeBtn;
+        protected global::System.Web.UI.WebControls.Label AlbumDescription;
 
         /// <summary>
-        /// ToCartBtn control.
+        /// AlbumPriceLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToCartBtn;
+        protected global::System.Web.UI.WebControls.Label AlbumPriceLbl;
 
         /// <summary>
-        /// ToTransactionBtn control.
+        /// AlbumPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToTransactionBtn;
+        protected global::System.Web.UI.WebControls.Label AlbumPrice;
 
         /// <summary>
-        /// ToProfileBtn control.
+        /// AlbumStockLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToProfileBtn;
+        protected global::System.Web.UI.WebControls.Label AlbumStockLbl;
 
         /// <summary>
-        /// sign_in_div control.
+        /// AlbumStock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel sign_in_div;
+        protected global::System.Web.UI.WebControls.Label AlbumStock;
 
         /// <summary>
-        /// ToLogin control.
+        /// AddToCart_div control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ToLogin;
+        protected global::System.Web.UI.WebControls.Panel AddToCart_div;
 
         /// <summary>
-        /// ToRegister control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ToRegister;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// ToSignOutBtn control.
+        /// AddToCartTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToSignOutBtn;
+        protected global::System.Web.UI.WebControls.TextBox AddToCartTxt;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// AddToCartBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button AddToCartBtn;
+
+        /// <summary>
+        /// BuyQuantityError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BuyQuantityError;
     }
 }

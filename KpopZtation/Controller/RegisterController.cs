@@ -23,7 +23,7 @@ namespace KpopZtation.Controller
             }
 
             String role = "CST";
-            CustomerHandler.insertToDatabase(name, email, gender, address, password, role);
+            CustomerRepository.insertCustomer(name, email, password, gender, address, role);
         }
 
         public static string checkName(String name)
@@ -39,7 +39,7 @@ namespace KpopZtation.Controller
         {
             String response = "";
             if (email.Equals("")) response = "Email cannot be empty";
-            else response = CustomerHandler.checkUniqueEmail(email);
+            else response = CustomerController.checkUniqueEmail(email);
 
             return response;
         }

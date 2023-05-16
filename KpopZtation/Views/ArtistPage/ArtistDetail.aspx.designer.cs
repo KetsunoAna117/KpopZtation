@@ -7,47 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KpopZtation.Views
+namespace KpopZtation.Views.Artist
 {
 
 
-    public partial class Home
+    public partial class ArtistDetail
     {
 
         /// <summary>
-        /// Home_Body control.
+        /// ArtistImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Home_Body;
+        protected global::System.Web.UI.WebControls.Image ArtistImage;
 
         /// <summary>
-        /// InsertArtistBtn control.
+        /// ArtistName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button InsertArtistBtn;
+        protected global::System.Web.UI.WebControls.Label ArtistName;
 
         /// <summary>
-        /// Home_ArtistData control.
+        /// InsertAlbumBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Home_ArtistData;
+        protected global::System.Web.UI.WebControls.Button InsertAlbumBtn;
 
         /// <summary>
-        /// GridView1 control.
+        /// AlbumsGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView AlbumsGridView;
     }
 }

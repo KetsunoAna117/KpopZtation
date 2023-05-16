@@ -8,12 +8,12 @@ namespace KpopZtation.Factory
 {
     public class AlbumFactory
     {
-        public static Album createAlbum(int artistId, String albumName, String albumImage, int albumPrice, int albumStock, String albumDescription)
+        public static Album createAlbum(String albumName, int artistID, String albumImage, int albumPrice, int albumStock, String albumDescription)
         {
             return new Album()
             {
-                ArtistID = artistId,
                 AlbumName = albumName,
+                ArtistID = artistID,
                 AlbumImage = albumImage,
                 AlbumPrice = albumPrice,
                 AlbumDescription = albumDescription,

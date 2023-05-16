@@ -7,110 +7,101 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KpopZtation.Views
+namespace KpopZtation.Views.Artist
 {
 
 
-    public partial class Navbar
+    public partial class InsertArtist
     {
 
         /// <summary>
-        /// head control.
+        /// InsertArtist_InputField control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Panel InsertArtist_InputField;
 
         /// <summary>
-        /// form1 control.
+        /// InsertArtist_NameInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Panel InsertArtist_NameInput;
 
         /// <summary>
-        /// ToHomeBtn control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToHomeBtn;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// ToCartBtn control.
+        /// ArtistNameTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToCartBtn;
+        protected global::System.Web.UI.WebControls.TextBox ArtistNameTxt;
 
         /// <summary>
-        /// ToTransactionBtn control.
+        /// ArtistNameError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToTransactionBtn;
+        protected global::System.Web.UI.WebControls.Label ArtistNameError;
 
         /// <summary>
-        /// ToProfileBtn control.
+        /// InsertArtist_ImageInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToProfileBtn;
+        protected global::System.Web.UI.WebControls.Panel InsertArtist_ImageInput;
 
         /// <summary>
-        /// sign_in_div control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel sign_in_div;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// ToLogin control.
+        /// ArtistImageUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ToLogin;
+        protected global::System.Web.UI.WebControls.FileUpload ArtistImageUpload;
 
         /// <summary>
-        /// ToRegister control.
+        /// ArtistImageError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ToRegister;
+        protected global::System.Web.UI.WebControls.Label ArtistImageError;
 
         /// <summary>
-        /// ToSignOutBtn control.
+        /// SubmitBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ToSignOutBtn;
-
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button SubmitBtn;
     }
 }

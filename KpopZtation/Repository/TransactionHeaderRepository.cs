@@ -25,14 +25,9 @@ namespace KpopZtation.Repository
 
         }
 
-        public static TransactionHeader getTransactionHeader(int transactionID)
-        {
-            return db.TransactionHeaders.Find(transactionID);
-        }
-
         public static List<TransactionHeader> getAllTransactionHeader()
         {
-            return (from transactionHeader in db.TransactionHeaders select transactionHeader).ToList();
+            return db.TransactionHeaders.ToList();
         }
 
 

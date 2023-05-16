@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace KpopZtation.Views.Artist
+namespace KpopZtation.Views.Transaction
 {
-    public partial class InsertArtist
+    public partial class TransactionHistory
     {
     }
 }
