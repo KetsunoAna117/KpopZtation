@@ -62,13 +62,13 @@
                 <div class="nav_navigator_container ">
                     <div class="nav_navigator">
                         <asp:Button CssClass="btn btn-outline-primary" ID="ToHomeBtn" runat="server" Text="Home" CausesValidation="false" OnClick="ToHomeBtn_Click"/>                      
-                        <asp:Button CssClass="btn btn-outline-primary" ID="ToCartBtn" runat="server" Text="Cart" CausesValidation="false"/>
-                        <asp:Button CssClass="btn btn-outline-primary" ID="ToTransactionBtn" runat="server" Text="Transaction" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-outline-primary" ID="ToCartBtn" runat="server" Text="Cart" CausesValidation="false" OnClick="ToCartBtn_Click"/>
+                        <asp:Button CssClass="btn btn-outline-primary" ID="ToTransactionBtn" runat="server" Text="Transaction" OnClick="ToTransactionBtn_Click" CausesValidation="false"/>
 
                     </div>
 
                     <div class="nav_account">
-                        <asp:Button CssClass="btn btn-secondary" ID="ToProfileBtn" runat="server" Text="Profile" CausesValidation="false"/>
+                        <asp:Button CssClass="btn btn-secondary" ID="ToProfileBtn" runat="server" Text="Profile" CausesValidation="false" OnClick="ToProfileBtn_Click"/>
                         
                         <asp:Panel ID="sign_in_div" runat="server" class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

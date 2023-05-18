@@ -33,7 +33,7 @@ namespace KpopZtation.Controller
             CustomerController.ProcessLogOut();
 
             // Redirect to the login page
-            HttpContext.Current.Response.Redirect("~/Views/SignIn/Login.aspx");
+            HttpContext.Current.Response.Redirect("~/Views/Home.aspx");
         }
     }
 }

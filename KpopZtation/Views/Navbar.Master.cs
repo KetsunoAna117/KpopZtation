@@ -16,7 +16,7 @@ namespace KpopZtation.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             NavbarController.HandleUserState();
-
+            
             if ((Boolean)Session["IsUserLoggedIn"])
             {
                 if(CustomerController.isAdmin())
@@ -66,6 +66,30 @@ namespace KpopZtation.Views
         protected void ToSignOutBtn_Click(object sender, EventArgs e)
         {
             NavbarController.doSignOut();
+        }
+
+        protected void ToProfileBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/UpdateProfile.aspx");
+
+        }
+
+        protected void ToCartBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Cart.aspx");
+
+        }
+
+        protected void ToTransactionBtn_Click(object sender, EventArgs e)
+        {
+            if (CustomerController.isAdmin())
+            {
+                Response.Redirect("~/Views/Transaction/TransactionReport.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Views/Transaction/TransactionHistory.aspx");
+            }
         }
     }
 }

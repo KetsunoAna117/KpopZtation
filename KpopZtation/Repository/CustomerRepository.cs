@@ -48,6 +48,11 @@ namespace KpopZtation.Repository
         //    return db.Customers.Find(id);
         //}
 
+        public static Customer GetCustomer(int id)
+        {
+            return db.Customers.Find(id);
+        }
+
         public static List<Customer> getAllCustomer()
         {
             return db.Customers.ToList();
