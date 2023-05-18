@@ -28,5 +28,11 @@ namespace KpopZtation.Repository
         {
             return db.Carts.ToList();
         }
+
+        public static void CheckoutCart(List<Cart> carts)
+        {
+            db.Carts.RemoveRange(carts);
+            db.SaveChanges();
+        }
     }
 }

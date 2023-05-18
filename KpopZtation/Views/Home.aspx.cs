@@ -20,29 +20,22 @@ namespace KpopZtation.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["User_Cookie"] == null && Session["User"] == null)
+            if (CustomerController.isAdmin())
             {
-                Response.Redirect("~/Views/Home.aspx");
+                InsertArtistBtn.Visible = true;
+                GridView1.Columns[3].Visible = true;
+                GridView1.Columns[4].Visible = true;
             }
             else
             {
-                if (CustomerController.isAdmin())
-                {
-                    InsertArtistBtn.Visible = true;
-                    GridView1.Columns[3].Visible = true;
-                    GridView1.Columns[4].Visible = true;
-                }
-                else
-                {
-                    InsertArtistBtn.Visible = false;
-                    GridView1.Columns[3].Visible = false;
-                    GridView1.Columns[4].Visible = false;
-                }
+                InsertArtistBtn.Visible = false;
+                GridView1.Columns[3].Visible = false;
+                GridView1.Columns[4].Visible = false;
+            }
 
-                if(IsPostBack == false)
-                {
-                    updateView();
-                }
+            if (!IsPostBack)
+            {
+                updateView();
             }
         }
 

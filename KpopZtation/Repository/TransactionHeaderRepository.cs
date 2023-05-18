@@ -11,10 +11,15 @@ namespace KpopZtation.Repository
     {
         private static Database1Entities2 db = Singleton.getDb();
 
-        public static void insertTransactionHeader(DateTime date, int customerID)
+        public static int insertTransactionHeader(DateTime date, int customerID)
         {
-            db.TransactionHeaders.Add(TransactionHeaderFactory.createTransactionHeader(date, customerID));
+            TransactionHeader th = TransactionHeaderFactory.createTransactionHeader(date, customerID);
+
+            db.TransactionHeaders.Add(th);
             db.SaveChanges();
+
+            // should return newly created transactionHeaderID here
+            return th.TransactionID;
         }
 
         public static void deleteTransactionHeader(int transactionID)
