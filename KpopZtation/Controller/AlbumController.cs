@@ -34,10 +34,14 @@ namespace KpopZtation.Controller
             {
                 response = "Must be filled";
             }
-            else {
-                priceInt = Convert.ToInt32(price);
+            else if (Int32.TryParse(price, out priceInt))
+            {
                 if (priceInt < 100000 || priceInt > 1000000) response = "Must between 100000 and 1000000";
-            };
+            }
+            else
+            {
+                response = "Must be in Integer";
+            }
 
             return response;
         }
@@ -51,11 +55,14 @@ namespace KpopZtation.Controller
             {
                 response = "Must be filled";
             }
+            else if(Int32.TryParse(stock, out stockInt))
+            {
+                if (stockInt <= 0) response = "Must be more than 0";
+            }
             else
             {
-                stockInt = Convert.ToInt32(stock);
-                if (stockInt <= 0) response = "Must be more than 0";
-            };
+                response = "Must be in Integer";
+            }
 
             return response;
         }

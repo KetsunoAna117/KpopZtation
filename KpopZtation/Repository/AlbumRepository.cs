@@ -37,10 +37,23 @@ namespace KpopZtation.Repository
             db.SaveChanges();
         }
 
-        //public static Album getAlbum(int albumID)
-        //{
-        //    return db.Albums.Find(albumID);
-        //}
+        public static void UpdateAlbumStock(List<Cart> albumToUpdate)
+        {
+            foreach(Cart cart in albumToUpdate)
+            {
+                Album selectedAlbum = db.Albums.Find(cart.AlbumID);
+                if(selectedAlbum != null)
+                {
+                    selectedAlbum.AlbumStock = selectedAlbum.AlbumStock - cart.Qty;
+                }
+            }
+            db.SaveChanges();
+        }
+
+        public static Album getAlbum(int albumID)
+        {
+            return db.Albums.Find(albumID);
+        }
 
         public static List<Album> getAllAlbum()
         {

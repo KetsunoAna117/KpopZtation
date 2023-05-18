@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using KpopZtation.Controller;
+using KpopZtation.Model;
 
 namespace KpopZtation.Views.Album
 {
@@ -24,18 +25,14 @@ namespace KpopZtation.Views.Album
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["User_Cookie"] == null && Session["User"] == null)
+            Customer customer = CustomerController.GetLoggedInUser();
+            if (CustomerController.isAdmin() || customer == null)
             {
-                Response.Redirect("~/Views/Home.aspx");
-            }
-
-            if (CustomerController.isAdmin() == false)
-            {
-                AddToCart_div.Visible = true;
+                AddToCart_div.Visible = false;
             }
             else
             {
-                AddToCart_div.Visible = false;
+                AddToCart_div.Visible = true;
 
             }
 
@@ -53,10 +50,17 @@ namespace KpopZtation.Views.Album
 
         protected void AddToCartBtn_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Request.QueryString["Id"]);
+            int albumId = Convert.ToInt32(Request.QueryString["Id"]);
             String quantity = AddToCartTxt.Text.ToString();
 
-            BuyQuantityError.Text = AlbumDetailController.CheckQuantity(id, quantity);
+            Customer customer = CustomerController.GetLoggedInUser();
+
+            BuyQuantityError.Text = AlbumDetailController.CheckQuantity(albumId, quantity);
+            if(BuyQuantityError.Text == "")
+            {
+                AlbumDetailController.addToCart(customer.CustomerID, albumId, Convert.ToInt32(quantity));
+            }
+            
         }
     }
 }

@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AlbumDetailController.cs" />
+    <Compile Include="Controller\CartController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\AlbumController.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="Controller\NavbarController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Controller\ArtistDetailController.cs" />
+    <Compile Include="Controller\TransactionHistoryController.cs" />
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />
     <Compile Include="Factory\CartFactory.cs" />
@@ -147,7 +149,9 @@
     <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\ArtistHandler.cs" />
+    <Compile Include="Handler\CartHandler.cs" />
     <Compile Include="Handler\CustomerHandler.cs" />
+    <Compile Include="Handler\TransactionHandler.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

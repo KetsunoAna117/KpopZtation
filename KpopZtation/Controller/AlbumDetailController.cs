@@ -14,15 +14,24 @@ namespace KpopZtation.Controller
             int qty = 0;
 
             if (quantity.Equals("")) response = "Must be filled";
-            else
+            else if(Int32.TryParse(quantity, out qty))
             {
-                qty = Convert.ToInt32(quantity);
-                if(qty >= AlbumHandler.getAnAlbum(id).AlbumStock)
+                if (qty >= AlbumHandler.getAnAlbum(id).AlbumStock)
                 {
                     response = "Mustn't be more than the stock album";
                 }
             }
+            else
+            {
+                response = "Input must be integer";
+            }
             return response;
+        }
+
+        public static void addToCart(int customerID, int AlbumId, int quantity)
+        {
+            CartHandler.AddItemsToCart(customerID, AlbumId, quantity);
+            HttpContext.Current.Response.Redirect("~/Views/Cart.aspx");
         }
     }
 }
