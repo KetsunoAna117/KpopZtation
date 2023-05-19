@@ -19,7 +19,7 @@
     <h3>Artist Details</h3>
     <div class="artist_details_container">
         <div class="artist_details">
-            <div class="card text-bg-dark" style="width: 18rem;">
+            <div class="card text-bg-dark" style="width: 10rem;">
                 <asp:Image ID="ArtistImage" runat="server" CssClass="card-img-top"/>
                 <div class="card-body">
                     <asp:Label ID="ArtistName" runat="server" CssClass="card-text"></asp:Label>
