@@ -14,24 +14,24 @@ namespace KpopZtation.Views
         private void updateView()
         {
             List<Model.Artist> artists = ArtistController.getAllArtist();
-            GridView1.DataSource = artists;
-            GridView1.DataBind();
+            CardRepeater.DataSource = artists;
+            CardRepeater.DataBind();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (CustomerController.isAdmin())
-            {
-                InsertArtistBtn.Visible = true;
-                GridView1.Columns[3].Visible = true;
-                GridView1.Columns[4].Visible = true;
-            }
-            else
-            {
-                InsertArtistBtn.Visible = false;
-                GridView1.Columns[3].Visible = false;
-                GridView1.Columns[4].Visible = false;
-            }
+            //if (CustomerController.isAdmin())
+            //{
+            //    InsertArtistBtn.Visible = true;
+            //    GridView1.Columns[3].Visible = true;
+            //    GridView1.Columns[4].Visible = true;
+            //}
+            //else
+            //{
+            //    InsertArtistBtn.Visible = false;
+            //    GridView1.Columns[3].Visible = false;
+            //    GridView1.Columns[4].Visible = false;
+            //}
 
             if (!IsPostBack)
             {
@@ -44,32 +44,72 @@ namespace KpopZtation.Views
             Response.Redirect("~/Views/ArtistPage/InsertArtist.aspx");
         }
 
-        protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        protected void CardRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            int selectedIndex = e.NewSelectedIndex;
-            int id = Convert.ToInt32(GridView1.DataKeys[selectedIndex].Value);
+            if (CustomerController.isAdmin())
+            {
+                InsertArtistBtn.Visible = true;
+                (e.Item.FindControl("ToUpdateArtist") as Control).Visible = true;
+                (e.Item.FindControl("ToDeleteArtist") as Control).Visible = true;
 
-            HomeController.SelectArtist(id);
-            
-
+            }
+            else
+            {
+                InsertArtistBtn.Visible = false;
+                (e.Item.FindControl("ToUpdateArtist") as Control).Visible = false;
+                (e.Item.FindControl("ToDeleteArtist") as Control).Visible = false;
+            }
         }
 
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        protected void ToUpdateArtist_Click(object sender, EventArgs e)
         {
-            int selectedIndex = e.RowIndex;
-            int id = Convert.ToInt32(GridView1.DataKeys[selectedIndex].Value);
-
-            HomeController.UpdateArtist(id);
-
+            Button btn = (Button)sender;
+            int artistID = Convert.ToInt32(btn.CommandArgument);
+            HomeController.UpdateArtist(artistID);
         }
 
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void ToDeleteArtist_Click(object sender, EventArgs e)
         {
-            int selectedIndex = e.RowIndex;
-            int id = Convert.ToInt32(GridView1.DataKeys[selectedIndex].Value);
+            Button btn = (Button)sender;
+            int artistID = Convert.ToInt32(btn.CommandArgument);
             String filePath = Server.MapPath("~/Assets/ArtistImage/");
 
-            HomeController.deleteArtist(id, filePath);
+            HomeController.deleteArtist(artistID, filePath);
         }
+
+        protected void Card_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            int artistID = Convert.ToInt32(btn.CommandArgument);
+            HomeController.SelectArtist(artistID);
+        }
+
+        //protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        //{
+        //    int selectedIndex = e.NewSelectedIndex;
+        //    int id = Convert.ToInt32(GridView1.DataKeys[selectedIndex].Value);
+
+        //    HomeController.SelectArtist(id);
+
+
+        //}
+
+        //protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        //{
+        //    int selectedIndex = e.RowIndex;
+        //    int id = Convert.ToInt32(GridView1.DataKeys[selectedIndex].Value);
+
+        //    HomeController.UpdateArtist(id);
+
+        //}
+
+        //protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        //{
+        //    int selectedIndex = e.RowIndex;
+        //    int id = Convert.ToInt32(GridView1.DataKeys[selectedIndex].Value);
+        //    String filePath = Server.MapPath("~/Assets/ArtistImage/");
+
+        //    HomeController.deleteArtist(id, filePath);
+        //}
     }
 }

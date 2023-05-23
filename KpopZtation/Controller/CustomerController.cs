@@ -11,13 +11,18 @@ namespace KpopZtation.Controller
     {
         public static bool isAdmin()
         {
+            Customer userData = new Customer();
             if (HttpContext.Current.Request.Cookies["User_Cookie"] != null)
             {
-                Customer userData = CustomerHandler.getCustomer(Convert.ToInt32(HttpContext.Current.Request.Cookies["User_Cookie"].Value));
+                userData = CustomerHandler.getCustomer(Convert.ToInt32(HttpContext.Current.Request.Cookies["User_Cookie"].Value));
                 return userData != null && userData.CustomerRole.ToString() == "ADMIN";
             }
+            else
+            {
+                userData = GetLoggedInUser();
+            }
+            return userData != null && userData.CustomerRole.ToString() == "ADMIN";
 
-            return false;
         }
 
         public static void ProcessLoginFailed()
