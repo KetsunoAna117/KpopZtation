@@ -44,13 +44,53 @@ namespace KpopZtation.Views
             Response.Redirect("~/Views/ArtistPage/InsertArtist.aspx");
         }
 
+        protected void CardRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (CustomerController.isAdmin())
+            {
+                InsertArtistBtn.Visible = true;
+                (e.Item.FindControl("ToUpdateArtist") as Control).Visible = true;
+                (e.Item.FindControl("ToDeleteArtist") as Control).Visible = true;
+
+            }
+            else
+            {
+                InsertArtistBtn.Visible = false;
+                (e.Item.FindControl("ToUpdateArtist") as Control).Visible = false;
+                (e.Item.FindControl("ToDeleteArtist") as Control).Visible = false;
+            }
+        }
+
+        protected void ToUpdateArtist_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int artistID = Convert.ToInt32(btn.CommandArgument);
+            HomeController.UpdateArtist(artistID);
+        }
+
+        protected void ToDeleteArtist_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int artistID = Convert.ToInt32(btn.CommandArgument);
+            String filePath = Server.MapPath("~/Assets/ArtistImage/");
+
+            HomeController.deleteArtist(artistID, filePath);
+        }
+
+        protected void Card_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            int artistID = Convert.ToInt32(btn.CommandArgument);
+            HomeController.SelectArtist(artistID);
+        }
+
         //protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         //{
         //    int selectedIndex = e.NewSelectedIndex;
         //    int id = Convert.ToInt32(GridView1.DataKeys[selectedIndex].Value);
 
         //    HomeController.SelectArtist(id);
-            
+
 
         //}
 
