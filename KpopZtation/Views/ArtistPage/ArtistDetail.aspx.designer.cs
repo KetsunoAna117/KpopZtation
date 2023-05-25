@@ -42,12 +42,12 @@ namespace KpopZtation.Views.Artist
         protected global::System.Web.UI.WebControls.Button InsertAlbumBtn;
 
         /// <summary>
-        /// AlbumsGridView control.
+        /// AlbumCardRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AlbumsGridView;
+        protected global::System.Web.UI.WebControls.Repeater AlbumCardRepeater;
     }
 }
