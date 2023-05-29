@@ -115,5 +115,7 @@ namespace KpopZtation.Controller
             HttpContext.Current.Response.Redirect("~/Views/Home.aspx");
 
         }
+
+        
     }
 }

@@ -26,6 +26,22 @@ namespace KpopZtation.Controller
             CustomerRepository.insertCustomer(name, email, password, gender, address, role);
         }
 
+        public static void UpdateToDatabase(int customerID, string name, string email, bool male, bool female, string address, string password, String customerRole)
+        {
+            String gender = "";
+            if (male)
+            {
+                gender = "Male";
+            }
+            else if (female)
+            {
+                gender = "Female";
+            }
+
+            String role = customerRole;
+            CustomerRepository.updateCustomer(customerID, name, email, password, gender, address, role);
+        }
+
         public static string checkName(String name)
         {
             String response = "";
