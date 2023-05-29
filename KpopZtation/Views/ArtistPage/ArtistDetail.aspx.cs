@@ -16,8 +16,8 @@ namespace KpopZtation.Views.Artist
             if(IsPostBack == false)
             {
                 List<Model.Album> albums = AlbumController.getAlbums(id);
-                AlbumsGridView.DataSource = albums;
-                AlbumsGridView.DataBind();
+                AlbumCardRepeater.DataSource = albums;
+                AlbumCardRepeater.DataBind();
             }
         }
 
@@ -37,14 +37,14 @@ namespace KpopZtation.Views.Artist
             if (CustomerController.isAdmin())
             {
                 InsertAlbumBtn.Visible = true;
-                AlbumsGridView.Columns[6].Visible = true;
-                AlbumsGridView.Columns[7].Visible = true;
+                //AlbumsGridView.Columns[6].Visible = true;
+                //AlbumsGridView.Columns[7].Visible = true;
             }
             else
             {
                 InsertAlbumBtn.Visible = false;
-                AlbumsGridView.Columns[6].Visible = false;
-                AlbumsGridView.Columns[7].Visible = false;
+                //AlbumsGridView.Columns[6].Visible = false;
+                //AlbumsGridView.Columns[7].Visible = false;
             }
 
             if (IsPostBack == false)
@@ -59,31 +59,69 @@ namespace KpopZtation.Views.Artist
             Response.Redirect("~/Views/AlbumPage/InsertAlbum.aspx?id=" + artistId);
         }
 
-        protected void AlbumsGridView_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            int selectedIndex = e.RowIndex;
-            int albumID = Convert.ToInt32(AlbumsGridView.DataKeys[selectedIndex].Value);
+        //protected void AlbumsGridView_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        //{
+        //    int selectedIndex = e.RowIndex;
+        //    int albumID = Convert.ToInt32(AlbumsGridView.DataKeys[selectedIndex].Value);
 
+        //    ArtistDetailController.UpdateAlbum(albumID);
+        //}
+
+        //protected void AlbumsGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        //{
+        //    int selectedIndex = e.RowIndex;
+        //    int albumID = Convert.ToInt32(AlbumsGridView.DataKeys[selectedIndex].Value);
+
+        //    String filePath = Server.MapPath("~/Assets/AlbumImage/");
+        //    ArtistDetailController.deleteAlbum(albumID, filePath);
+
+        //}
+
+        //protected void AlbumsGridView_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        //{
+        //    int selectedIndex = e.NewSelectedIndex;
+        //    int id = Convert.ToInt32(AlbumsGridView.DataKeys[selectedIndex].Value);
+
+        //    ArtistDetailController.SelectAlbum(id);
+
+        //}
+
+        protected void AlbumCardRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (CustomerController.isAdmin())
+            {
+                (e.Item.FindControl("ToUpdateAlbum") as Control).Visible = true;
+                (e.Item.FindControl("ToDeleteAlbum") as Control).Visible = true;
+            }
+            else
+            {
+                (e.Item.FindControl("ToUpdateAlbum") as Control).Visible = false;
+                (e.Item.FindControl("ToDeleteAlbum") as Control).Visible = false;
+            }
+        }
+
+        protected void ToUpdateAlbum_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int albumID = Convert.ToInt32(btn.CommandArgument);
             ArtistDetailController.UpdateAlbum(albumID);
         }
 
-        protected void AlbumsGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void ToDeleteAlbum_Click(object sender, EventArgs e)
         {
-            int selectedIndex = e.RowIndex;
-            int albumID = Convert.ToInt32(AlbumsGridView.DataKeys[selectedIndex].Value);
-
+            Button btn = (Button)sender;
+            int albumID = Convert.ToInt32(btn.CommandArgument);
             String filePath = Server.MapPath("~/Assets/AlbumImage/");
+
             ArtistDetailController.deleteAlbum(albumID, filePath);
-
         }
 
-        protected void AlbumsGridView_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        protected void Card_Click(object sender, EventArgs e)
         {
-            int selectedIndex = e.NewSelectedIndex;
-            int id = Convert.ToInt32(AlbumsGridView.DataKeys[selectedIndex].Value);
-
-            ArtistDetailController.SelectAlbum(id);
-
+            LinkButton btn = (LinkButton)sender;
+            int albumID = Convert.ToInt32(btn.CommandArgument);
+            ArtistDetailController.SelectAlbum(albumID);
         }
+
     }
 }
