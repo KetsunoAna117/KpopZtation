@@ -11,7 +11,7 @@ namespace KpopZtation.Repository
     public class TransactionDetailRepository
     {
         private static Database1Entities2 db = Singleton.getDb();
-        public static void insertTransactionDetail(int transactionID, int albumID, int quantity) 
+        public static void insertTransactionDetail(int transactionID, int albumID, int quantity)
         {
             db.TransactionDetails.Add(TransactionDetailFactory.createTransactionDetail(transactionID, albumID, quantity));
             db.SaveChanges();
@@ -25,9 +25,26 @@ namespace KpopZtation.Repository
 
         }
 
-        public static List<TransactionDetail> getAllTransactionDetail()
+        public static dynamic getAllTransactionDetail(Customer customer)
         {
-            return db.TransactionDetails.ToList();
+            return db.TransactionDetails.Join(db.TransactionHeaders,
+                td => td.TransactionID,
+                th => th.TransactionID,
+                (td, th) => new { td, th }).Join(db.Albums,
+                transaction => transaction.td.AlbumID,
+                album => album.AlbumID,
+                (transaction, album) => new
+                {
+                    TransactionID = transaction.td.TransactionID,
+                    CustomerID = customer.CustomerID,
+                    TransactionDate = transaction.th.TransactionDate,
+                    CustomerName = customer.CustomerName,
+                    Courier = "KPOPZstation Courier",
+                    AlbumImage = album.AlbumImage,
+                    AlbumName = album.AlbumName,
+                    Quantity = transaction.td.Qty,
+                    AlbumPrice = album.AlbumPrice
+                }).Where(c => c.CustomerID == customer.CustomerID).ToList();
         }
 
     }

@@ -9,7 +9,7 @@ namespace KpopZtation.Controller
 {
     public class CartController
     {
-        public static List<CartHandler.ShowedCartData> GetShowedCartDatas(int customerID)
+        public static dynamic GetShowedCartDatas(int customerID)
         {
             return CartHandler.getCartData(customerID);
         }
