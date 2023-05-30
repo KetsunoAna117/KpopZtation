@@ -38,15 +38,15 @@ namespace KpopZtation.Repository
             db.SaveChanges();
         }
 
-        //public static Customer findCustomerByEmail(String email)
-        //{
-        //    return (from customer in db.Customers where customer.CustomerEmail == email select customer).FirstOrDefault();
-        //}
+        public static Customer findCustomerByEmail(String email)
+        {
+            return (from customer in db.Customers where customer.CustomerEmail == email select customer).FirstOrDefault();
+        }
 
-        //public static Customer getCustomerByID(int id)
-        //{
-        //    return db.Customers.Find(id);
-        //}
+        public static Customer getCustomerByID(int id)
+        {
+            return db.Customers.Find(id);
+        }
 
         public static Customer GetCustomer(int id)
         {
@@ -58,9 +58,9 @@ namespace KpopZtation.Repository
             return db.Customers.ToList();
         }
 
-        //public static Customer getCustomer(String email, String password)
-        //{
-        //    return (from customer in db.Customers where customer.CustomerEmail == email && customer.CustomerPassword == password select customer).FirstOrDefault();
-        //}
+        public static Customer GetCustomer(String email, String password)
+        {
+            return (from customer in db.Customers where customer.CustomerEmail == email && customer.CustomerPassword == password select customer).FirstOrDefault();
+        }
     }
 }

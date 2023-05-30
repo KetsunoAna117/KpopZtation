@@ -26,16 +26,12 @@ namespace KpopZtation.Handler
 
         public static List<Album> getAlbums(int artistID)
         {
-            List<Album> albums = AlbumRepository.getAllAlbum();
-            List<Album> filteredAlbums = albums.Where(album => album.ArtistID == artistID).ToList();
-
-            return filteredAlbums;
+            return AlbumRepository.getAlbumByArtist(artistID);
         }
 
         public static Album getAnAlbum(int id)
         {
-            List<Album> albums = AlbumRepository.getAllAlbum();
-            return albums.Find(album => album.AlbumID == id);
+            return AlbumRepository.getAlbum(id);
         }
 
     }

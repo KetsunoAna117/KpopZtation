@@ -39,10 +39,10 @@ namespace KpopZtation.Repository
 
         public static void UpdateAlbumStock(List<Cart> albumToUpdate)
         {
-            foreach(Cart cart in albumToUpdate)
+            foreach (Cart cart in albumToUpdate)
             {
                 Album selectedAlbum = db.Albums.Find(cart.AlbumID);
-                if(selectedAlbum != null)
+                if (selectedAlbum != null)
                 {
                     selectedAlbum.AlbumStock = selectedAlbum.AlbumStock - cart.Qty;
                 }
@@ -59,10 +59,9 @@ namespace KpopZtation.Repository
         {
             return db.Albums.ToList();
         }
-
-        //public static List<Album> getAlbumByArtist(int ArtistID)
-        //{
-        //    return (from albums in db.Albums where (albums.ArtistID == ArtistID) select albums).ToList();
-        //}
+        public static List<Album> getAlbumByArtist(int ArtistID)
+        {
+            return (from albums in db.Albums where (albums.ArtistID == ArtistID) select albums).ToList();
+        }
     }
 }

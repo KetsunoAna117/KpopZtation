@@ -34,14 +34,12 @@ namespace KpopZtation.Handler
 
         public static Artist getArtistByName(string name)
         {
-            List<Artist> artists = getAllArtist();
-            return artists.Where(artist => artist.ArtistName == name).FirstOrDefault();
+            return ArtistRepository.GetArtistByName(name);
         }
 
         public static Artist GetArtist(int id)
         {
-            List<Artist> artists = getAllArtist();
-            return artists.Where(artist => artist.ArtistID == id).FirstOrDefault();
+            return ArtistRepository.getArtist(id);
         }
 
         public static List<Artist> getAllArtist()
