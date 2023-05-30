@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using KpopZtation.Handler;
+using KpopZtation.Model;
 
 namespace KpopZtation.Controller
 {
     public class TransactionHistoryController
     {
-        public static List<TransactionHandler.ShowedTransactionData> GetTransactionDatas(int customerID)
+        public static dynamic GetTransactionDatas(Customer currentUser)
         {
-            return TransactionHandler.GetTransactionHistory(customerID);
+            return TransactionHandler.GetTransactionHistory(currentUser);
         }
     }
 }

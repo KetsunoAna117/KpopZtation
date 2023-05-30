@@ -13,10 +13,9 @@ namespace KpopZtation.Views.Transaction
 
     public partial class TransactionHistory : System.Web.UI.Page
     {
-        private void showData(int customerID)
+        private void showData(Customer currentUser)
         {
-            List<TransactionHandler.ShowedTransactionData> datas = TransactionHistoryController.GetTransactionDatas(customerID);
-            TransactionHistoryGridView.DataSource = datas;
+            TransactionHistoryGridView.DataSource = TransactionHistoryController.GetTransactionDatas(currentUser);
             TransactionHistoryGridView.DataBind();
         }
 
@@ -28,9 +27,9 @@ namespace KpopZtation.Views.Transaction
                 Response.Redirect("~/Views/Home.aspx");
             }
 
-            if(IsPostBack == false)
+            if (IsPostBack == false)
             {
-                showData(currentUser.CustomerID);
+                showData(currentUser);
             }
         }
     }
