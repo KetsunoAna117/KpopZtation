@@ -14,8 +14,7 @@ namespace KpopZtation.Views
     {
         private void showData(int customerID)
         {
-            List<CartHandler.ShowedCartData> showedCartDatas = CartController.GetShowedCartDatas(customerID);
-            CartGridView.DataSource = showedCartDatas;
+            CartGridView.DataSource = CartController.GetShowedCartDatas(customerID);
             CartGridView.DataBind();
         }
 

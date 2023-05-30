@@ -24,9 +24,22 @@ namespace KpopZtation.Repository
             db.SaveChanges();
         }
 
-        public static List<Cart> getAllCartData()
+        public static dynamic getAllCartData(int customerID)
         {
-            return db.Carts.ToList();
+            return db.Carts.Join(
+                db.Albums,
+                cart => cart.AlbumID,
+                album => album.AlbumID,
+                (cart, album) => new
+                {
+                    CustomerID = cart.CustomerID,
+                    AlbumID = album.AlbumID,
+                    AlbumName = album.AlbumID,
+                    AlbumImage = album.AlbumImage,
+                    AlbumPrice = album.AlbumPrice,
+                    Quantity = cart.Qty
+
+                }).Where(c => c.CustomerID == customerID).ToList();
         }
 
         public static void CheckoutCart(List<Cart> carts)
