@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using KpopZtation.Handler;
 using KpopZtation.Model;
 
@@ -55,13 +57,51 @@ namespace KpopZtation.Controller
             {
                 response = "Must be filled";
             }
-            else if(Int32.TryParse(stock, out stockInt))
+            else if (Int32.TryParse(stock, out stockInt))
             {
                 if (stockInt <= 0) response = "Must be more than 0";
             }
             else
             {
                 response = "Must be in Integer";
+            }
+
+            return response;
+        }
+
+        public static String ValidateFile(String fileExtension, int fileSize)
+        {
+            String[] allowedExtension = { ".png", ".jpg", ".jpeg", ".jfif" };
+            const int maxSizeInBytes = 2 * 1024 * 1024; // 2 MB
+
+            String response = "";
+
+            if (allowedExtension.Contains(fileExtension) != true)
+            {
+                response = "File extension must be .png, .jpg, .jpeg, or .jfif";
+            }
+            else if (fileSize >= maxSizeInBytes)
+            {
+                response = "File size must be lower than 2MB";
+            }
+            return response;
+
+        }
+
+        public static String CheckFile(FileUpload AlbumImageFile)
+        {
+            String response;
+            if (AlbumImageFile.HasFile)
+            {
+                String fileExtension = Path.GetExtension(AlbumImageFile.FileName).ToLower();
+                int fileSize = AlbumImageFile.FileBytes.Length;
+
+                response = ValidateFile(fileExtension, fileSize);
+
+            }
+            else
+            {
+                response = "Must be chosen";
             }
 
             return response;
@@ -77,16 +117,26 @@ namespace KpopZtation.Controller
             return AlbumHandler.getAnAlbum(albumID);
         }
 
-        public static void insertAlbum(String name, int ArtistID, String description, int price, int stock, string imageName)
+        public static void insertAlbum(String name, int ArtistID, String description, int price, int stock, FileUpload albumImage)
         {
-            AlbumHandler.InsertAlbum(name, ArtistID, description, price, stock, imageName);
+            string fileName = albumImage.FileName;
+            string filePath = HttpContext.Current.Server.MapPath("~/Assets/AlbumImage/") + fileName;
+
+            albumImage.SaveAs(filePath);
+
+            AlbumHandler.InsertAlbum(name, ArtistID, description, price, stock, fileName);
             HttpContext.Current.Response.Redirect("~/Views/ArtistPage/ArtistDetail.aspx?id=" + ArtistID);
 
         }
 
-        public static void UpdateAlbum(int albumID, int artistId, String albumName, String albumImage, int albumPrice, int albumStock, String albumDescription)
+        public static void UpdateAlbum(int albumID, int artistId, String albumName, FileUpload albumImage, int albumPrice, int albumStock, String albumDescription)
         {
-            AlbumHandler.UpdateAlbum(albumID, artistId, albumName, albumImage, albumPrice, albumStock, albumDescription);
+            string fileName = albumImage.FileName;
+            string filePath = HttpContext.Current.Server.MapPath("~/Assets/AlbumImage/") + fileName;
+
+            albumImage.SaveAs(filePath);
+
+            AlbumHandler.UpdateAlbum(albumID, artistId, albumName, fileName, albumPrice, albumStock, albumDescription);
             HttpContext.Current.Response.Redirect("~/Views/ArtistPage/ArtistDetail.aspx?id=" + artistId);
 
 
