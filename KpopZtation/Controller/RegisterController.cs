@@ -23,7 +23,7 @@ namespace KpopZtation.Controller
             }
 
             String role = "CST";
-            CustomerRepository.insertCustomer(name, email, password, gender, address, role);
+            CustomerHandler.InsertToDatabase(name, email, password, gender, address, role);
         }
 
         public static void UpdateToDatabase(int customerID, string name, string email, bool male, bool female, string address, string password, String customerRole)
@@ -72,9 +72,9 @@ namespace KpopZtation.Controller
         {
             String response = "";
             if (address.Equals("")) response = "Must be filled";
-            else if (!address.EndsWith("Street")) response = "Must end with street";
+            else if (!address.EndsWith("Street")) response = "Must end with Street";
 
-            return response; 
+            return response;
         }
 
         public static String checkPassword(String password)
@@ -82,7 +82,7 @@ namespace KpopZtation.Controller
             String response = "";
             if (password.Equals("")) response = "Password Must be filled";
             else if (!isAlphaNumeric(password)) response = "Password must be alphanumeric";
-            
+
             return response;
         }
 
@@ -91,7 +91,7 @@ namespace KpopZtation.Controller
             bool hasCharacter = false;
             bool hasNumber = false;
 
-            foreach(char c in input)
+            foreach (char c in input)
             {
                 if (char.IsLetter(c))
                 {
@@ -103,7 +103,7 @@ namespace KpopZtation.Controller
                 }
             }
 
-            if(hasCharacter && hasNumber)
+            if (hasCharacter && hasNumber)
             {
                 return true;
             }

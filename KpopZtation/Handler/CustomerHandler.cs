@@ -21,6 +21,11 @@ namespace KpopZtation.Handler
 
         }
 
+        public static void InsertToDatabase(string name, string email, string password, string gender, string address, string role)
+        {
+            CustomerRepository.insertCustomer(name, email, password, gender, address, role);
+        }
+
         public static Customer getCustomer(int id)
         {
             return CustomerRepository.getCustomerByID(id);

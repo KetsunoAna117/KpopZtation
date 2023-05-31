@@ -33,11 +33,11 @@ namespace KpopZtation.Views.SignIn
             AddressError.Text = RegisterController.checkAddress(address);
             PasswordError.Text = RegisterController.checkPassword(password);
 
-            if(NameError.Text == "" && EmailError.Text == "" && GenderError.Text == "" && AddressError.Text == "" && PasswordError.Text == "")
+            if (NameError.Text == "" && EmailError.Text == "" && GenderError.Text == "" && AddressError.Text == "" && PasswordError.Text == "")
             {
-                Response.Redirect("~/Views/SignIn/Login.aspx");
                 RegisterController.InsertToDatabase(name, email, male, female, address, password);
                 SuccessLbl.Text = "Success!";
+                //Response.Redirect("~/Views/SignIn/Login.aspx");
             }
             else
             {
