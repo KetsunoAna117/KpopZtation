@@ -37,30 +37,38 @@ namespace KpopZtation.Views.Album
             AlbumPriceError.Text = AlbumController.CheckPrice(price);
             AlbumStockError.Text = AlbumController.CheckStock(stock);
 
-            // Validate File (Can't move to controller)
-            if (AlbumImageUpload.HasFile)
+            AlbumImageError.Text = AlbumController.CheckFile(AlbumImageUpload);
+
+            if (AlbumImageError.Text == "" && AlbumNameError.Text == "" && AlbumDescError.Text == "" && AlbumPriceError.Text == "" && AlbumStockError.Text == "")
             {
-                AlbumImageError.Text = ArtistController.checkFile(Path.GetExtension(AlbumImageUpload.FileName).ToLower(), AlbumImageUpload.FileBytes.Length);
+                AlbumController.insertAlbum(name, id, desc, Convert.ToInt32(price), Convert.ToInt32(stock), AlbumImageUpload);
 
-                if (AlbumImageError.Text == "" && AlbumNameError.Text == "" && AlbumDescError.Text == "" && AlbumPriceError.Text == "" && AlbumStockError.Text == "")
-                {
-                    string fileName = AlbumImageUpload.FileName;
-                    string filePath = Server.MapPath("~/Assets/AlbumImage/") + fileName;
-
-                    AlbumImageUpload.SaveAs(filePath);
-
-                    AlbumController.insertAlbum(name, id, desc, Convert.ToInt32(price), Convert.ToInt32(stock), fileName);
-                    Response.Redirect("~/Views/Home.aspx");
-                }
-                else
-                {
-                    return;
-                }
             }
-            else
-            {
-                AlbumImageError.Text = "Must be chosen";
-            }
+
+            //// Validate File (Can't move to controller)
+            //if (AlbumImageUpload.HasFile)
+            //{
+            //    AlbumImageError.Text = ArtistController.ValidateFile(Path.GetExtension(AlbumImageUpload.FileName).ToLower(), AlbumImageUpload.FileBytes.Length);
+
+            //    if (AlbumImageError.Text == "" && AlbumNameError.Text == "" && AlbumDescError.Text == "" && AlbumPriceError.Text == "" && AlbumStockError.Text == "")
+            //    {
+            //        string fileName = AlbumImageUpload.FileName;
+            //        string filePath = Server.MapPath("~/Assets/AlbumImage/") + fileName;
+
+            //        AlbumImageUpload.SaveAs(filePath);
+
+            //        AlbumController.insertAlbum(name, id, desc, Convert.ToInt32(price), Convert.ToInt32(stock), fileName);
+            //        Response.Redirect("~/Views/Home.aspx");
+            //    }
+            //    else
+            //    {
+            //        return;
+            //    }
+            //}
+            //else
+            //{
+            //    AlbumImageError.Text = "Must be chosen";
+            //}
         }
     }
 }

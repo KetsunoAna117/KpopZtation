@@ -32,13 +32,13 @@ namespace KpopZtation.Views.Artist
             {
                 Response.Redirect("~/Views/Home.aspx");
             }
-            if(Request.QueryString["Id"] == null)
+            if (Request.QueryString["Id"] == null)
             {
                 Response.Redirect("~/Views/Home.aspx");
 
             }
 
-            if(IsPostBack == false)
+            if (IsPostBack == false)
             {
                 showData();
             }
@@ -51,32 +51,11 @@ namespace KpopZtation.Views.Artist
 
             String name = ArtistNameTxt.Text.ToString();
             ArtistNameError.Text = ArtistController.checkArtistName(name);
+            ArtistImageError.Text = ArtistController.CheckFile(ArtistImageUpload);
 
-
-            if (ArtistImageUpload.HasFile)
+            if (ArtistNameError.Text == "" && ArtistImageError.Text == "")
             {
-                String fileExtension = Path.GetExtension(ArtistImageUpload.FileName).ToLower();
-                int fileSize = ArtistImageUpload.FileBytes.Length;
-
-                ArtistImageError.Text = ArtistController.checkFile(fileExtension, fileSize);
-
-                if (ArtistImageError.Text == "")
-                {
-                    String filePath = Server.MapPath("~/Assets/ArtistImage/") + artist.ArtistImage;
-                    HomeController.DeleteFile(filePath);
-
-                    String fileName = ArtistImageUpload.FileName;
-                    filePath = Server.MapPath("~/Assets/ArtistImage/") + fileName;
-
-                    ArtistImageUpload.SaveAs(filePath);
-
-                    ArtistController.updateArtist(id, name, fileName);
-                    Response.Redirect("~/Views/Home.aspx");
-                }
-            }
-            else
-            {
-                ArtistImageError.Text = "Must be chosen";
+                ArtistController.UpdateArtist(artist, name, ArtistImageUpload);
             }
 
         }
