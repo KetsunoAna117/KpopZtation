@@ -16,7 +16,7 @@
     <asp:Panel ID="Home_Body" runat="server">
         <asp:Button CssClass="btn btn-success mb-3" ID="InsertArtistBtn" runat="server" Text="Insert Artist" CausesValidation="false" OnClick="InsertArtistBtn_Click"/> 
         
-        <div class="row row-cols-1 row-cols-md-5 g-4">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
             <asp:Repeater ID="CardRepeater" runat="server" OnItemDataBound="CardRepeater_ItemDataBound">
                 <ItemTemplate>
                     <div class="col">
