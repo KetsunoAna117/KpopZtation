@@ -9,7 +9,7 @@ namespace KpopZtation.Repository
 {
     public class CartRepository
     {
-        private static Database1Entities2 db = Singleton.getDb();
+        private static Database1Entities5 db = Singleton.getDb();
 
         public static void insertCart(int customerID, int albumID, int quantity)
         {
@@ -22,6 +22,11 @@ namespace KpopZtation.Repository
             Cart selected = (from Cart in db.Carts where (Cart.CustomerID == customerID && Cart.AlbumID == albumID) select Cart).FirstOrDefault();
             db.Carts.Remove(selected);
             db.SaveChanges();
+        }
+
+        public static List<Cart> getCart(int customerID)
+        {
+            return db.Carts.Where(cart => cart.CustomerID == customerID).ToList();
         }
 
         public static dynamic getAllCartData(int customerID)

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KpopZtation.Views.Album
+namespace KpopZtation.Views.Albums
 {
 
 

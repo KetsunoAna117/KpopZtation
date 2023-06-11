@@ -8,12 +8,12 @@ namespace KpopZtation.Repository
 {
     public class Singleton
     {
-        private static Database1Entities2 database;
-        public static Database1Entities2 getDb()
+        private static Database1Entities5 database;
+        public static Database1Entities5 getDb()
         {
             if (database == null)
             {
-                database = new Database1Entities2();
+                database = new Database1Entities5();
             }
             return database;
         }
