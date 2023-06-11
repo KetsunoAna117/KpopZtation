@@ -10,7 +10,7 @@ namespace KpopZtation.Repository
 {
     public class CustomerRepository
     {
-        private static Database1Entities2 db = Singleton.getDb();
+        private static Database1Entities5 db = Singleton.getDb();
 
         public static void insertCustomer(string name, string email, string password, string gender, string address, string role)
         {

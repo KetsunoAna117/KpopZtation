@@ -20,18 +20,18 @@ namespace KpopZtation.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (CustomerController.isAdmin())
-            //{
-            //    InsertArtistBtn.Visible = true;
-            //    GridView1.Columns[3].Visible = true;
-            //    GridView1.Columns[4].Visible = true;
-            //}
-            //else
-            //{
-            //    InsertArtistBtn.Visible = false;
-            //    GridView1.Columns[3].Visible = false;
-            //    GridView1.Columns[4].Visible = false;
-            //}
+            if (CustomerController.isAdmin())
+            {
+                InsertArtistBtn.Visible = true;
+                //GridView1.Columns[3].Visible = true;
+                //GridView1.Columns[4].Visible = true;
+            }
+            else
+            {
+                InsertArtistBtn.Visible = false;
+                //GridView1.Columns[3].Visible = false;
+                //GridView1.Columns[4].Visible = false;
+            }
 
             if (!IsPostBack)
             {

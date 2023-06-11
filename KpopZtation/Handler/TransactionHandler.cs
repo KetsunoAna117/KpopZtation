@@ -96,5 +96,11 @@ namespace KpopZtation.Handler
             return TransactionDetailRepository.getAllTransactionDetail(currentUser);
         }
 
+        public static List<TransactionHeader> GetTransactionReport()
+        {
+            return TransactionHeaderRepository.getAllTransactionHeader();
+        }
+
+        
     }
 }

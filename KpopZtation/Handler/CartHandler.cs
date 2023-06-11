@@ -22,7 +22,7 @@ namespace KpopZtation.Handler
 
         public static void DeleteCart(int customerID)
         {
-            var carts = CartRepository.getAllCartData(customerID);
+            var carts = CartRepository.getCart(customerID);
             // push to transaction header
             int thID = TransactionHeaderRepository.insertTransactionHeader(DateTime.Now, customerID);
 

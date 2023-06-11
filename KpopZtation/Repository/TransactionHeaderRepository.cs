@@ -9,7 +9,7 @@ namespace KpopZtation.Repository
 {
     public class TransactionHeaderRepository
     {
-        private static Database1Entities2 db = Singleton.getDb();
+        private static Database1Entities5 db = Singleton.getDb();
 
         public static int insertTransactionHeader(DateTime date, int customerID)
         {

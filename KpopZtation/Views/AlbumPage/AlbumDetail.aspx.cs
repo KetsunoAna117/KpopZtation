@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using KpopZtation.Controller;
 using KpopZtation.Model;
 
-namespace KpopZtation.Views.Album
+namespace KpopZtation.Views.Albums
 {
     public partial class AlbumDetail : System.Web.UI.Page
     {

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using KpopZtation.Controller;
 using System.IO;
 
-namespace KpopZtation.Views.Album
+namespace KpopZtation.Views.Albums
 {
     public partial class InsertAlbum : System.Web.UI.Page
     {

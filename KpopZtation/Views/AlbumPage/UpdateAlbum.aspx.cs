@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using KpopZtation.Controller;
 
 
-namespace KpopZtation.Views.Album
+namespace KpopZtation.Views.Albums
 {
     public partial class UpdateAlbum : System.Web.UI.Page
     {

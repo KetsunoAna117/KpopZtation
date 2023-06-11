@@ -9,7 +9,7 @@ namespace KpopZtation.Repository
 {
     public class ArtistRepository
     {
-        private static Database1Entities2 db = Singleton.getDb();
+        private static Database1Entities5 db = Singleton.getDb();
 
         public static void addArtist(String name, String image)
         {
