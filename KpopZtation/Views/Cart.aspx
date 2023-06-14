@@ -15,7 +15,7 @@
                 <asp:BoundField DataField="AlbumName" HeaderText="Album Name" SortExpression="AlbumName" />
                 <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Qty" />
                 <asp:BoundField DataField="AlbumPrice" HeaderText="Album Price" SortExpression="AlbumPrice/pcs" />
-                <asp:ButtonField ButtonType="Button" CommandName="Delete" ControlStyle-CssClass="btn btn-danger" HeaderText="Delete" ShowHeader="True" Text="Delete" />
+                <asp:ButtonField ButtonType="Button" CommandName="Delete" ControlStyle-CssClass="btn btn-danger" HeaderText="Delete" ShowHeader="True" Text="Delete" Visible="true" />
             </Columns>
 
         </asp:GridView>
