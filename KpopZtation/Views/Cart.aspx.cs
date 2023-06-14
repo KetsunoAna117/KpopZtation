@@ -51,5 +51,13 @@ namespace KpopZtation.Views
             Customer customer = CustomerController.GetLoggedInUser();
             CartController.CheckOut(customer.CustomerID);
         }
+
+        protected void CartGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            Customer customer = CustomerController.GetLoggedInUser();
+            int albumID = Convert.ToInt32(CartGridView.DataKeys[e.RowIndex].Value);
+
+            CartController.deleteCart(customer.CustomerID, albumID);
+        }
     }
 }

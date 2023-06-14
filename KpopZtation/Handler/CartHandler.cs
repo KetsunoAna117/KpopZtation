@@ -20,6 +20,11 @@ namespace KpopZtation.Handler
             return CartRepository.getAllCartData(customerId);
         }
 
+        public static void deleteItemFromCart(int customerID, int albumID)
+        {
+            CartRepository.deleteALbumCart(customerID, albumID);
+        }
+
         public static void DeleteCart(int customerID)
         {
             var carts = CartRepository.getCart(customerID);
