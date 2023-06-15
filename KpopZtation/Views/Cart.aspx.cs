@@ -58,6 +58,7 @@ namespace KpopZtation.Views
             int albumID = Convert.ToInt32(CartGridView.DataKeys[e.RowIndex].Value);
 
             CartController.deleteCart(customer.CustomerID, albumID);
+            Response.Redirect("~/Views/Cart.aspx");
         }
     }
 }
