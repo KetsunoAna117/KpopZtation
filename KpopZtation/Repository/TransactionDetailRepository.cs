@@ -10,7 +10,7 @@ namespace KpopZtation.Repository
 {
     public class TransactionDetailRepository
     {
-        private static Database1Entities5 db = Singleton.getDb();
+        private static Database1Entities6 db = Singleton.getDb();
         public static void insertTransactionDetail(int transactionID, int albumID, int quantity)
         {
             db.TransactionDetails.Add(TransactionDetailFactory.createTransactionDetail(transactionID, albumID, quantity));
