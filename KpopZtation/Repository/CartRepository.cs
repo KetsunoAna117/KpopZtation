@@ -9,7 +9,7 @@ namespace KpopZtation.Repository
 {
     public class CartRepository
     {
-        private static Database1Entities5 db = Singleton.getDb();
+        private static Database1Entities6 db = Singleton.getDb();
 
         public static void insertCart(int customerID, int albumID, int quantity)
         {
